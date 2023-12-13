@@ -1,6 +1,6 @@
 <template>
     <div class="col">
-
+        
         <NavbarBottom />
 
         <div class="row">
@@ -23,6 +23,20 @@
 
                 </div>
 
+                <div class="row q-my-lg">
+
+                    <InfoComponent />
+
+                </div>
+
+                <div class="row">
+                    <div class="col ">
+                        <h6 class="text-weight-bold">Öne Çıkan Ürünler</h6>
+                        <Product/>
+                    </div>
+                </div>
+
+
 
 
             </div>
@@ -40,14 +54,17 @@
 import NavbarBottom from "../components/NavbarBottom.vue"
 import CarouselComponent from "../components/CarouselComponent.vue"
 import FeatureComponent from "../components/FeatureComponent.vue"
+import InfoComponent from "../components/InfoComponent.vue"
+import Product from "../components/ProductComponent.vue"
+
 
 import { defineComponent } from 'vue';
 import CategoryList from "./CategoryList.vue";
 
 export default defineComponent({
 
-    
 
-    components: { NavbarBottom, CategoryList, CarouselComponent,FeatureComponent }
+
+    components: { NavbarBottom, CategoryList, CarouselComponent, FeatureComponent, InfoComponent,Product }
 })
 </script>
