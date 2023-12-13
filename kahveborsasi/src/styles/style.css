@@ -35,3 +35,26 @@
     position: absolute;
     right: 20%;
 }
+
+.category-color{
+    background-color: #ecba4a;
+    width: 100vh;
+    padding: 20px 0px;
+}
+
+.text-decoration-none{
+    text-decoration: none;
+    color: #26254f;
+}
+
+.navbar-bottom{
+    font-weight: bold;
+}
+
+.navbar-bottom>div{
+    margin-right: 20px;
+}
+
+.navbar-bottom>div>a:hover{
+    color: white;
+}

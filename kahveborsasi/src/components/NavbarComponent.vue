@@ -28,7 +28,7 @@
                     <div class="deneme">
                         
                         <div>
-                            <a href="#"><img class="navbar-icon " src="../assets/navbar/user.png" alt=""></a>
+                            <a href="#"><img class="navbar-icon q-mr-lg" src="../assets/navbar/user.png" alt=""></a>
                             <a href="#"><img class="navbar-icon " src="../assets/navbar/basket.png" alt=""></a>
                         </div>
                     </div>
