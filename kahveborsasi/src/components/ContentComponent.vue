@@ -13,13 +13,24 @@
                     </div>
                     <div class="col-8 q-pl-lg">
                         <CarouselComponent />
-                        
+
                     </div>
                 </div>
 
-                
+                <div class="row q-my-lg justify-center text-weight-bold ">
 
-                
+                    <FeatureComponent />
+
+                </div>
+
+                <div class="row q-my-lg">
+                    
+                    <InfoComponent/>
+                    
+                </div>
+
+
+
 
             </div>
             <div class="col-2"></div>
@@ -35,17 +46,17 @@
 
 import NavbarBottom from "../components/NavbarBottom.vue"
 import CarouselComponent from "../components/CarouselComponent.vue"
-import { defineComponent, ref } from 'vue';
+import FeatureComponent from "../components/FeatureComponent.vue"
+import InfoComponent from "../components/InfoComponent.vue"
+
+
+import { defineComponent } from 'vue';
 import CategoryList from "./CategoryList.vue";
 
 export default defineComponent({
 
-    setup() {
-        return {
-            slide: ref(1)
-        }
-    },
+    
 
-    components: { NavbarBottom, CategoryList, CarouselComponent }
+    components: { NavbarBottom, CategoryList, CarouselComponent,FeatureComponent,InfoComponent }
 })
 </script>
