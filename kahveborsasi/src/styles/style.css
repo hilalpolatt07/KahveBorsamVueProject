@@ -3,10 +3,58 @@
 }
 
 .navbar-bottom-border{
-    border-bottom: 2px solid #fcb900;
+    border-bottom: 1px solid #fcb900;
 }
 
 
 .navbar-icon{
     width: 26px;
+}
+
+.navbar-search{
+    display: flex;
+    justify-content: left;
+    background-color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    
+}
+
+.navbar-search > input{
+    border:none;
+    outline: none;
+    width: 70%;
+    
+}
+
+.wp-icon{
+    width: 40px;
+}
+
+.deneme{
+    position: absolute;
+    right: 20%;
+}
+
+.category-color{
+    background-color: #ecba4a;
+    width: 100vh;
+    padding: 20px 0px;
+}
+
+.text-decoration-none{
+    text-decoration: none;
+    color: #26254f;
+}
+
+.navbar-bottom{
+    font-weight: bold;
+}
+
+.navbar-bottom>div{
+    margin-right: 20px;
+}
+
+.navbar-bottom>div>a:hover{
+    color: white;
 }
