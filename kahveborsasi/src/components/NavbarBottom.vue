@@ -7,22 +7,27 @@
                     <div class="col-8">
                         <div class="row navbar-bottom">
                             <div class="col-1">
-                                <a href="#" class=" text-decoration-none"><img width="15px" src="../assets/navbar/home.png" alt="">
+                                <a href="#" class=" text-decoration-none"><img width="15"  src="../assets/navbar/home.png" alt="">
                                 ANA SAYFA</a>
                             </div>
                             <div class="col-1">
+                                <router-link class="text-decoration-none"  :to="{path:'/products'}">
+                                    <img width="15" src="../assets/navbar/coffee.png" alt="">KAHVELER
+                                </router-link>
                                 <a href="#" class="text-decoration-none"><img width="15px" src="../assets/navbar/coffee.png" alt="">
-                                KAHVELER
+                                
                                 </a>
                             </div>
                             <div class="col-1">
-                                <a href="#" class="text-decoration-none"><img width="15px" src="../assets/navbar/info.png" alt="">
+                                <router-link class="text-decoration-none"  :to="{path:'/info'}">
+                                    <img width="15" src="../assets/navbar/info.png" alt="">
                                     HİKAYEMİZ
-                                </a>
+                                </router-link>
+                                
                                 
                             </div>
                             <div class="col-1">
-                                <a href="#" class="text-decoration-none"><img width="15px" src="../assets/navbar/blog.png" alt="">
+                                <a href="#" class="text-decoration-none"><img width="15" src="../assets/navbar/blog.png" alt="">
                                     BLOG
                                 </a>
                                 
