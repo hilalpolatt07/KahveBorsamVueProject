@@ -7,26 +7,19 @@
             <div class="col-2"></div>
             <div class="col-8 ">
                 <h4 class="text-center text-weight-bold">Taksitli ve Toptan Kahve</h4>
+                
                 <div class="row">
-                    <div class="col-3">
-                        <CategoryList />
-                    </div>
-                    <div class="col-8 q-pl-lg">
+                    <div class="col q-pl-lg">
                         <CarouselComponent />
-
                     </div>
                 </div>
 
                 <div class="row q-my-lg justify-center text-weight-bold ">
-
                     <FeatureComponent />
-
                 </div>
 
                 <div class="row q-my-lg">
-
                     <InfoComponent />
-
                 </div>
 
                 <div class="row">
@@ -36,19 +29,15 @@
                     </div>
                 </div>
 
-                <div class="row justify-center">
-                    <ExtensionComponent />
+                <div class="row  q-my-lg">
+                    <ExtensionComponent :extensionList="extensionList" />
                 </div>
             </div>
             <div class="col-2"></div>
         </div>
 
-        
         <Footer/>
-
         
-
-
     </div>
 </template>
 
@@ -61,15 +50,23 @@ import InfoComponent from "../components/InfoComponent.vue"
 import Product from "../components/ProductComponent.vue"
 import Footer from "../components/FooterComponent.vue"
 
-
-import CategoryList from "./CategoryList.vue";
 import ExtensionComponent from "./ExtensionComponent.vue"
-import { defineComponent } from 'vue';
+import { defineComponent, reactive, toRefs } from 'vue';
 
 export default defineComponent({
 
+    setup() {
+        const state = reactive({
+            extensionList: [
+                { id: 1, url: "extension2.jpg" },
+                { id: 2, url: "extension3.jpg" },
+            ]
+        })
 
+        return { ...toRefs(state) }
 
-    components: { NavbarBottom, CategoryList, CarouselComponent, FeatureComponent, InfoComponent, Product, ExtensionComponent,Footer }
+    },
+
+    components: { NavbarBottom, CarouselComponent, FeatureComponent, InfoComponent, Product, ExtensionComponent,Footer }
 })
 </script>

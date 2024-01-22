@@ -1,23 +1,26 @@
 <template>
     <div>
-        <Navbar/>
-        <NavbarBottom/>
-        <Product/>
+        <Navbar />
+        <NavbarBottom />
+        <ProductPageContent />
+        <FooterComponent />
     </div>
 </template>
 
-<script>
+<script lang="ts">
 
 import Navbar from "../components/NavbarComponent.vue";
 import NavbarBottom from "../components/NavbarBottom.vue";
 
-import Product from "../components/ProductComponent.vue"
 
 import { defineComponent } from 'vue';
+import ProductPageContent from "@/components/ProductPageContent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
 
 export default defineComponent({
 
+   
 
-components:{ Product, Navbar,NavbarBottom }
+    components: { Navbar, NavbarBottom, ProductPageContent, FooterComponent }
 })
 </script>

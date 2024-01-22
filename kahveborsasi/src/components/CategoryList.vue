@@ -4,40 +4,39 @@
             <q-item-section class="text-weight-bold">Kategoriler</q-item-section>
         </q-item>
 
-        <q-item class="" clickable v-ripple>
+        <q-item v-for="category in getCategoryList" :key="category.id" clickable v-ripple>
             <q-item-section>
-
-                <q-item-label> <a href="#" class="text-decoration-none q-mr-sm"><img class="navbar-icon"
-                            src="../assets/navbar/coffee.png" alt="" /></a>Kavrulmuş Kahve</q-item-label>
+                <q-item-label>{{ category.name }}</q-item-label>
             </q-item-section>
         </q-item>
-
-        <q-item clickable v-ripple>
-            <q-item-section>
-                <q-item-label><a href="#" class="text-decoration-none q-mr-sm"><img class="navbar-icon"
-                            src="../assets/navbar/coffee.png" alt="" /></a>Expresso</q-item-label>
-            </q-item-section>
-        </q-item>
-        <q-item clickable v-ripple>
-            <q-item-section>
-                <q-item-label><a href="#" class="text-decoration-none q-mr-sm"><img class="navbar-icon"
-                            src="../assets/navbar/coffee.png" alt="" /></a>Harman</q-item-label>
-            </q-item-section>
-        </q-item>
-        <q-item clickable v-ripple>
-            <q-item-section>
-                <q-item-label><a href="#" class="text-decoration-none q-mr-sm"><img class="navbar-icon"
-                            src="../assets/navbar/coffee.png" alt="" /></a>Single Origin</q-item-label>
-            </q-item-section>
-        </q-item>
-        <q-item clickable v-ripple>
-            <q-item-section>
-                <q-item-label><a href="#" class="text-decoration-none q-mr-sm"><img class="navbar-icon"
-                            src="../assets/navbar/coffee.png" alt="" /></a>Türk Kahvesi</q-item-label>
-            </q-item-section>
-        </q-item>
-        <div class="row justify-center">
-            <q-btn class=" text-weight-bold q-mt-md q-pa-md " color="black" label="İndirimli Ürünler" />
-        </div>
     </q-list>
 </template>
+
+
+<script lang="ts">
+
+import { defineComponent} from 'vue';
+import { mapState, mapActions } from 'pinia';
+import categoryStore from '@/stores/categoryStore';
+
+export default defineComponent({
+
+    async created() {
+        this.setCategoryList()
+
+    },
+
+    unmounted(){
+        this.clearCategoryList()
+    },
+
+    methods: {
+        ...mapActions(categoryStore, ["setCategoryList","clearCategoryList"])
+    },
+
+    computed: {
+        ...mapState(categoryStore, ["getCategoryList"])
+    }
+
+})
+</script>

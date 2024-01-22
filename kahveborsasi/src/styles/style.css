@@ -1,5 +1,5 @@
 .navbar-bg{
-    background: #26254f;
+    background: #ffffff;
 }
 
 .navbar-bottom-border{
@@ -16,15 +16,27 @@
     justify-content: left;
     background-color: white;
     padding: 10px 25px;
-    border-radius: 30px;
+    align-items: center;
+    border:1px solid gainsboro;
     
 }
 
 .navbar-search > input{
     border:none;
     outline: none;
-    width: 70%;
+    width: 100%;
     
+}
+
+.w-100{
+    width: 100%;
+}
+
+.top-position{
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    scroll-behavior: smooth;
 }
 
 .wp-icon{
@@ -37,7 +49,7 @@
 }
 
 .category-color{
-    background-color: #ecba4a;
+    background-color: #f4f4f4;
     width: 100vh;
     padding: 20px 0px;
 }
@@ -68,7 +80,6 @@ div.info{
 
 div.info>h5{
     position: absolute;
-    
     left: 50%;
     transform: translateX(-50%);
 }
@@ -77,3 +88,5 @@ div.info>ul{
     position: absolute;
     top: 40%;
 }
+
+

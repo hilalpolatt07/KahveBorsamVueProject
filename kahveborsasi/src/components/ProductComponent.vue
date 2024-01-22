@@ -1,6 +1,6 @@
 <template>
     <div class="q-pa-md row items-start justify-center q-gutter-md">
-        <q-card v-for="product in productList" :key="product.id" class="my-card" flat bordered>
+        <q-card v-for="product in getProductList" :key="product.id" class="my-card" flat bordered>
 
             <img :src="require(`../assets/products/${product.url}`)" alt="">
 
@@ -12,19 +12,15 @@
                 </div>
             </q-card-section>
 
-            <q-card-section class="q-pt-none">
+            <q-card-section class="q-pt-none flex justify-between">
                 <div class="text-subtitle1">
-                     {{ product.price }} TL
+                    {{ product.price }} TL
                 </div>
-                <div class="text-caption text-grey">
-                   Kahve
+                <div v-if="isAuth">
+                    <q-btn @click="addBasket(product)" round color="green" glossy icon="local_grocery_store" />
                 </div>
-            </q-card-section>
-            <q-card-section class="justify-center row">
-                <q-btn  color="green" glossy icon="local_grocery_store" />
             </q-card-section>
 
-            <q-separator></q-separator>
 
         </q-card>
     </div>
@@ -32,25 +28,58 @@
 
 
 <script lang="ts">
+import Product from '@/types/Product';
+import { defineComponent,reactive,toRefs } from 'vue';
+import { mapState, mapActions } from 'pinia';
+import { authStore } from "@/stores/index"
+import productStore from '@/stores/productStore';
+import basketStore from '@/stores/basketStore';
 
-import { defineComponent, reactive, toRefs } from 'vue';
-import Product from "../types/Product"
+
 
 export default defineComponent({
 
-    setup() {
-        const state = reactive({
-            productList:[
-                {id:1,name:"Kavrulmuş Kahve",url:"product1.jpg",price:50},
-                {id:1,name:"Orta Kavrulmuş",url:"product2.jpg",price:220},
-                {id:1,name:"Çiğ Yeşil Çekirdek",url:"product3.jpg",price:170},
-                {id:1,name:"Çiğ Yeşil Çekirdek Yeni Hasat",url:"product4.jpg",price:150},
-                {id:1,name:"Koyu Kavrulmuş",url:"product5.jpg",price:250},
 
-            ] as Product[]
+    setup() {
+
+        const state = reactive({
+            email: "",
         })
 
         return { ...toRefs(state) }
+
+    },
+
+    async created() {
+        this.setProductList()
+
+        //@ts-ignore
+        this.email = this.getUser?.email;
+        
+
+    },
+
+    unmounted() {
+        this.clearProductList()
+    },
+
+    methods: {
+
+        addBasket(product: Product) {
+
+            //@ts-ignore
+            this.addToBasket(product,this.email)
+
+        },
+
+        ...mapActions(productStore, ["setProductList", "clearProductList"]),
+        ...mapActions(basketStore,["addToBasket"])
+    },
+
+
+    computed: {
+        ...mapState(authStore, ["isAuth", "getUser"]),
+        ...mapState(productStore, ["getProductList"])
     }
 
 })

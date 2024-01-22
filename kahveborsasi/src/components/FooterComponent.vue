@@ -1,20 +1,19 @@
 <template>
-    <q-footer class="row bg-dark" elevated>
-            <div class="col-2"></div>
-            <div class="col-8">
-                <q-toolbar>
-                    <q-toolbar-title>
-                        <ul class="text-white"  style="list-style: none;">
-                            <li><a class="text-decoration-none text-white" href="#">Ana sayfa</a></li>
-                            <li><a class="text-decoration-none text-white" href="#">Blog</a></li>
-                            <li><a class="text-decoration-none text-white" href="#">Gizlilik ve Güvenlik</a></li>
-                            <li><a class="text-decoration-none text-white" href="#">Hakkımızda</a></li>
-                            <li><a class="text-decoration-none text-white" href="#">Hesabım</a></li>
-                            <li><a class="text-decoration-none text-white" href="#">Ödemeler</a></li>
-                        </ul>
-                    </q-toolbar-title>
-                </q-toolbar>
-            </div>
-            <div class="col-2"></div>
-        </q-footer>
+    <q-footer class="row bg-brown-1 q-pa-lg">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <q-toolbar>
+                <q-toolbar-title>
+                    <div class="row justify-center">
+                        <div class="col-2 ">
+                            <img style="width: 200px;" src="../assets/navbar/kahveborsasi.png">
+                        </div>
+                    </div>
+                    <p class="text-center text-dark">Türkiye’nin sadece <span class="text-bold">kahve emtiası
+                            sağlayan</span> ilk e-ticaret sitesi</p>
+                </q-toolbar-title>
+            </q-toolbar>
+        </div>
+        <div class="col-3"></div>
+    </q-footer>
 </template>

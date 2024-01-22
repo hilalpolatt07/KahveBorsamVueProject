@@ -1,19 +1,18 @@
 <template>
     <div>
         <Navbar />
-        <Content/>
-      
+        <BasketPageContent />
     </div>
 </template>
 
 <script lang="ts">
 
+import BasketPageContent from "@/components/BasketPageContent.vue";
 import Navbar from "../components/NavbarComponent.vue"
-import Content from "../components/ContentComponent.vue"
 import { defineComponent } from 'vue';
 
 export default defineComponent({
 
-    components: { Navbar,Content }
+    components: { Navbar, BasketPageContent }
 })
 </script>

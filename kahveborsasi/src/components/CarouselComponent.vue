@@ -1,6 +1,6 @@
 <template>
   <div class="q-pa-md">
-    <q-carousel animated arrows v-model="slide" navigation infinite>
+    <q-carousel animated  v-model="slide" navigation infinite>
       <q-carousel-slide v-for="carousel in carouselList" :key="carousel.id" :name="carousel.id"
         :img-src="require(`../assets/carousel/${carousel.url}`)" />
 
@@ -11,10 +11,8 @@
   
 
 <script lang="ts">
-
 import { defineComponent, reactive, toRefs, ref } from 'vue';
 import CarouselPhoto from "../types/CarouselPhoto"
-
 
 export default defineComponent({
 
@@ -30,11 +28,13 @@ export default defineComponent({
         { id: 3, url: "carousel3.jpg" }
 
       ] as CarouselPhoto[],
+      
 
 
     })
     return { ...toRefs(state) }
-  }
+  },
+  
 
 })
 </script>
